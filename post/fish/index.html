@@ -229,7 +229,30 @@ bin/install --offline
 <pre><code>omf install ays
 </code></pre></li>
 </ol>
-<h4 id="3体验">3.体验</h4>
+<h4 id="3-进行一些常用的调整">3. 进行一些常用的调整</h4>
+<ol>
+<li>
+<p>添加自定义配置文件</p>
+<pre><code>touch ~/.config/fish/config.fish
+</code></pre></li>
+<li>
+<p>更换命令补全快捷键为 ctrl - j</p>
+<pre><code># ~/.config/fish/config.fish
+bind \cj accept-autosuggestion
+</code></pre></li>
+<li>
+<p>添加刷新fish配置命令，通过sfish (source fish) 来刷新新增配置</p>
+<pre><code># ~/.config/fish/functions/sfish.fish
+function sfish
+source /Users/nsity/.config/fish/config.fish
+end
+</code></pre></li>
+<li>
+<p>集成fd，bat</p>
+<p>todo</p>
+</li>
+</ol>
+<h4 id="4-体验">4. 体验</h4>
 <ol>
 <li>补全提示很美</li>
 <li>速度好像的确比zsh快一些（不知道是不是错觉</li>
