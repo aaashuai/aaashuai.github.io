@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="Fish Shell" />
+    <meta property="og:title" content="Fish Shell" />
+    <meta property="twitter:title" content="Fish Shell" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="AAAShuai, aaashuai, Blog, 博客, 个人网站">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Tags | to be a real programer</title>
+    <title>Fish Shell | to be a real programer</title>
 
-    <link rel="canonical" href="/tags/">
+    <link rel="canonical" href="/post/fish/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 
@@ -139,14 +139,32 @@
 
 
 
-<header class="intro-header" style="background-image: url('/')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>AShuai </h1>
-                    
-		    <span class="subheading">to be a real programer</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/tools" title="tools">
+                            tools
+                        </a>
+                        
+                    </div>
+                    <h1>Fish Shell</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Sunday, June 20, 2021
+                        
+                        
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -159,13 +177,78 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <h4 id="1-为啥用fish">1. 为啥用fish</h4>
+<p>感受一下 friendly interactive shell 有多friendly (其实是zsh用太久了, 想尝鲜, hhh</p>
+<h4 id="2-安装步骤">2. 安装步骤</h4>
+<ol>
+<li>
+<p>安装fish</p>
+<pre><code>brew install fish
+</code></pre></li>
+<li>
+<p>修改为默认shell （参见官方文档</p>
+<ol>
+<li>Add the shell to <code>/etc/shells</code> with:</li>
+</ol>
+<pre><code>echo /usr/local/bin/fish | sudo tee -a /etc/shells
+</code></pre><ol start="2">
+<li>Change your default shell with:</li>
+</ol>
+<pre><code>chsh -s /usr/local/bin/fish
+</code></pre><ol start="3">
+<li>重新打开shell</li>
+</ol>
+</li>
+<li>
+<p>安装fisher</p>
+<pre><code>curl -sL https://git.io/fisher | source &amp;&amp; fisher install jorgebucaran/fisher
+</code></pre></li>
+<li>
+<p>安装z-jump</p>
+<pre><code>fisher install jethrokuan/z
+</code></pre></li>
+<li>
+<p>安装 oh-my-fish
+a. [墙&hellip; ]</p>
+<pre><code>curl -L https://get.oh-my.fish | fish
+</code></pre><p>b. [wroked]</p>
+<pre><code>git clone https://github.com/oh-my-fish/oh-my-fish
+cd oh-my-fish
+bin/install --offline
+</code></pre></li>
+<li>
+<p>安装皮肤 ays</p>
+<pre><code>omf install ays
+</code></pre></li>
+</ol>
+<h4 id="3体验">3.体验</h4>
+<ol>
+<li>补全提示很美</li>
+<li>速度好像的确比zsh快一些（不知道是不是错觉</li>
+</ol>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/hello-world/" data-toggle="tooltip" data-placement="top" title="Hello World">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
                 
 <div id="disqus-comment"></div>
 
@@ -174,30 +257,9 @@
             </div>
             
             <div class="
-                col-lg-8 col-lg-offset-2
+                col-lg-11 col-lg-offset-1
                 col-md-10 col-md-offset-1
                 sidebar-container">
-
-                
-                
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                        
-                        
-                        
-                        <a href="/tags/tools" title="tools">
-                            tools (1)
-                        </a>
-                        
-                        
-                    </div>
-                </section>
-                
-
-                
-                
             </div>
         </div>
     </div>

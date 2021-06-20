@@ -5,6 +5,16 @@
     <link>https://aaashuai.github.io/tags/</link>
     <description>Recent content in Tags on AShuai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://aaashuai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aaashuai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tools</title>
+      <link>https://aaashuai.github.io/tags/tools/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aaashuai.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

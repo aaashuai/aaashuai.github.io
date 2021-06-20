@@ -6,7 +6,21 @@
     <description>Recent content in Posts on AShuai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 17 Apr 2021 09:11:54 +0800</lastBuildDate><atom:link href="https://aaashuai.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aaashuai.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fish Shell</title>
+      <link>https://aaashuai.github.io/post/fish/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://aaashuai.github.io/post/fish/</guid>
+      <description>1. 为啥用fish 感受一下 friendly interactive shell 有多friendly (其实是zsh用太久了, 想尝鲜, hhh
+2. 安装步骤   安装fish
+brew install fish   修改为默认shell （参见官方文档
+ Add the shell to /etc/shells with:  echo /usr/local/bin/fish | sudo tee -a /etc/shells Change your default shell with:  chsh -s /usr/local/bin/fish 重新打开shell    安装fisher
+curl -sL https://git.io/fisher | source &amp;amp;&amp;amp; fisher install jorgebucaran/fisher   安装z-jump
+fisher install jethrokuan/z   安装 oh-my-fish a.</description>
+    </item>
+    
     <item>
       <title>Hello World</title>
       <link>https://aaashuai.github.io/post/hello-world/</link>

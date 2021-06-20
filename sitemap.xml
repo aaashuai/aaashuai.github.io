@@ -4,7 +4,27 @@
   
   <url>
     <loc>https://aaashuai.github.io/</loc>
-    <lastmod>2021-04-17T09:11:54+08:00</lastmod>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aaashuai.github.io/post/fish/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aaashuai.github.io/post/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aaashuai.github.io/tags/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aaashuai.github.io/tags/tools/</loc>
+    <lastmod>2021-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,16 +33,7 @@
   </url>
   
   <url>
-    <loc>https://aaashuai.github.io/post/</loc>
-    <lastmod>2021-04-17T09:11:54+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aaashuai.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://aaashuai.github.io/tags/</loc>
   </url>
   
 </urlset>
