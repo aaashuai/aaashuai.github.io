@@ -6,7 +6,21 @@
     <description>Recent content in tools on AShuai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Aug 2021 12:07:04 +0800</lastBuildDate><atom:link href="https://aaashuai.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Oct 2021 10:57:47 +0800</lastBuildDate><atom:link href="https://aaashuai.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zsh Shell</title>
+      <link>https://aaashuai.github.io/post/zsh/</link>
+      <pubDate>Fri, 29 Oct 2021 10:57:47 +0800</pubDate>
+      
+      <guid>https://aaashuai.github.io/post/zsh/</guid>
+      <description>1. 给zsh添加自定义补全   在.zshrc添加补全激活
+# ~/.zshrc ... autoload -U compinit compinit ...   查看fpath
+$ print -rl -- $fpath /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting /Users/xxx/.oh-my-zsh/plugins/zsh-autosuggestions /Users/xxx/.oh-my-zsh/plugins/git /Users/xxx/.oh-my-zsh/plugins/z /Users/xxx/.oh-my-zsh/functions /Users/xxx/.oh-my-zsh/completions /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting /Users/xxx/.oh-my-zsh/plugins/zsh-autosuggestions /Users/xxx/.oh-my-zsh/plugins/git /Users/xxx/.oh-my-zsh/plugins/z /Users/xxx/.oh-my-zsh/functions /Users/xxx/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions   如果没有想要放置的目录，就把自定义的目录（此处是~/newdir）添加到fpath
+# ~/.zshrc ... fpath=(~/newdir $fpath) ... # &amp;gt;bash $ print -rl -- $fpath ... /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions /Users/xxx/newdir   在你自定义的目录下添加补全方法
+  定义方法
+# /Users/xxx/newdir/_yourFunc # compdef _yourFunc yourAimFunc1 yourAimFunc2 .</description>
+    </item>
+    
     <item>
       <title>ideavim 插件速查</title>
       <link>https://aaashuai.github.io/post/ideavim/</link>
