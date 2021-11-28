@@ -14,11 +14,11 @@
       
       <guid>https://aaashuai.github.io/post/zsh/</guid>
       <description>1. 给zsh添加自定义补全   在.zshrc添加补全激活
-# ~/.zshrc ... autoload -U compinit compinit ...   查看fpath
+$ vim ~/.zshrc ... autoload -U compinit compinit ...   查看fpath, 选择一个写脚本的地方
 $ print -rl -- $fpath /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting /Users/xxx/.oh-my-zsh/plugins/zsh-autosuggestions /Users/xxx/.oh-my-zsh/plugins/git /Users/xxx/.oh-my-zsh/plugins/z /Users/xxx/.oh-my-zsh/functions /Users/xxx/.oh-my-zsh/completions /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting /Users/xxx/.oh-my-zsh/plugins/zsh-autosuggestions /Users/xxx/.oh-my-zsh/plugins/git /Users/xxx/.oh-my-zsh/plugins/z /Users/xxx/.oh-my-zsh/functions /Users/xxx/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions   如果没有想要放置的目录，就把自定义的目录（此处是~/newdir）添加到fpath
-# ~/.zshrc ... fpath=(~/newdir $fpath) ... # &amp;gt;bash $ print -rl -- $fpath ... /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions /Users/xxx/newdir   在你自定义的目录下添加补全方法
+# zsh $ vim ~/.zshrc ... fpath=(~/newdir $fpath) ... # zsh $ print -rl -- $fpath ... /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions /Users/xxx/newdir   在你自定义的目录下添加补全方法
   定义方法
-# /Users/xxx/newdir/_yourFunc # compdef _yourFunc yourAimFunc1 yourAimFunc2 .</description>
+# zsh $ vim /Users/xxx/newdir/_yourFunc #compdef _yourFunc yourAimFunc1 yourAimFunc2 .</description>
     </item>
     
     <item>
@@ -52,17 +52,6 @@ fisher install jethrokuan/z   安装 oh-my-fish a.</description>
       
       <guid>https://aaashuai.github.io/post/hello-world/</guid>
       <description>print(&amp;#34;hello world...&amp;#34;) </description>
-    </item>
-    
-    <item>
-      <title>为啥开始写博客了</title>
-      <link>https://aaashuai.github.io/post/why-blog/</link>
-      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://aaashuai.github.io/post/why-blog/</guid>
-      <description>一直以来，总是将一些收集到的素材，教程之类的东西放到浏览器的书签中 通过给每个书签用固定格式的命令来实现快速检索 但是后来发现，对于一些常用的操作（比如：安装某些应用、插件的步骤，某些不常用的命令。。。)
-用这种方式检索的效率可能没那么快（也可能是个人问题）
-所以立此博客来记录这些内容以提高搬砖效率 hhh。</description>
     </item>
     
   </channel>

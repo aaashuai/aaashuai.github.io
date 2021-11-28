@@ -189,14 +189,14 @@
 <ol>
 <li>
 <p>在.zshrc添加补全激活</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ~/.zshrc</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ vim ~/.zshrc
 ...
 autoload -U compinit
 compinit
 ...
 </code></pre></div></li>
 <li>
-<p>查看fpath</p>
+<p>查看fpath, 选择一个写脚本的地方</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ print -rl -- $fpath
 /Users/xxx/.oh-my-zsh/plugins/vi-mode
 /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting
@@ -218,12 +218,13 @@ compinit
 </code></pre></div></li>
 <li>
 <p>如果没有想要放置的目录，就把自定义的目录（此处是~/newdir）添加到fpath</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># ~/.zshrc</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># zsh</span>
+$ vim ~/.zshrc
 ...
 fpath<span style="color:#f92672">=(</span>~/newdir $fpath<span style="color:#f92672">)</span>
 ...
 
-<span style="color:#75715e"># &gt;bash</span>
+<span style="color:#75715e"># zsh</span>
 $ print -rl -- $fpath
 ...
 /usr/share/zsh/site-functions
@@ -235,9 +236,10 @@ $ print -rl -- $fpath
 <ol>
 <li>
 <p>定义方法</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /Users/xxx/newdir/_yourFunc</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># zsh</span>
+$ vim /Users/xxx/newdir/_yourFunc
 
-<span style="color:#75715e"># compdef _yourFunc yourAimFunc1 yourAimFunc2 ...  # 这行不能少, 自动加载补全到你的命令</span>
+<span style="color:#75715e">#compdef _yourFunc yourAimFunc1 yourAimFunc2 ...  # 这行不能少, 自动加载补全到你的命令, 且&#39;#&#39;必须紧挨compdef, 否则无法注册函数</span>
 
 <span style="color:#66d9ef">function</span> _yourFunc <span style="color:#f92672">{</span>
     compadd api mqtt interval kafka ftp celery  <span style="color:#75715e"># 给命令添加候选项</span>
@@ -245,6 +247,7 @@ $ print -rl -- $fpath
 <span style="color:#f92672">}</span>
 
 _yourFunc
+
 </code></pre></div></li>
 <li>
 <p>刷新zsh</p>
