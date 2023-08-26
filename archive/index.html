@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer-when-downgrade">
 
     
     <meta property="og:site_name" content="AAAShuai">
@@ -368,20 +369,53 @@
             </div>
         </div>
         <div class="row">
+    
+        
+        <script> 
+            function loadAsync(u, c) {
+              var d = document, t = 'script',
+                  o = d.createElement(t),
+                  s = d.getElementsByTagName(t)[0];
+              o.src = u;
+              if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+              s.parentNode.insertBefore(o, s);
+            }
 
-    <script> 
-        function loadAsync(u, c) {
-          var d = document, t = 'script',
-              o = d.createElement(t),
-              s = d.getElementsByTagName(t)[0];
-          o.src = u;
-          if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-          s.parentNode.insertBefore(o, s);
-        }
+     
+            loadAsync("/js/busuanzi.js")
+            $(document).ready(function() {
+                var busuanziSiteUvOffset =  -44 
+                var busuanziSitePvOffset =  -9 
+                var busuanziPagePvOffset =  0 
+                var fixUv = setInterval(fixSiteUv, 100);
+                console.log(`fo siteUv: ${busuanziSiteUvOffset} sitePv: ${busuanziSitePvOffset}, pagePv: ${busuanziPagePvOffset}`);
+                function fixSiteUv() {
+                    let siteUv = $("#busuanzi_value_site_pv").html();
+                    if ($("#busuanzi_container_value_site_pv").css("display") != "none" && siteUv) {
+                        clearInterval(fixUv);
+                        $("#busuanzi_value_site_pv").html(parseInt(siteUv) + busuanziSiteUvOffset);
+                    }
+                }
+                var fixPv = setInterval(fixSitePv, 100);
+                function fixSitePv(){
+                    let sitePv = $("#busuanzi_value_site_uv").html()
+                    if ($("#busuanzi_container_value_site_uv").css("display") != "none" && sitePv) {
+                        clearInterval(fixPv);
+                        $("#busuanzi_value_site_uv").html(parseInt(sitePv) + busuanziSitePvOffset);
+                    }
+                }
 
- 
-        loadAsync("/js/busuanzi.js")
-    </script>
+                var fixPagePv = setInterval(fixPagePv, 100);
+                function fixPagePv(){
+                    let pagePv = $("#busuanzi_value_page_pv").html();
+                    if ($("#busuanzi_container_page_pv").css("display") != "none" && pagePv) {
+                        clearInterval(fixPagePv);
+                        $("#busuanzi_value_page_pv").html(parseInt(pagePv) + busuanziPagePvOffset);
+                    }
+                }
+            });
+        </script>
+    
 
     
         
