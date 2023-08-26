@@ -58,22 +58,25 @@ var bszCaller, bszTag;
 })();
 
 bszCaller = {
-  fetch: function (a, b) {
+  fetch: function (url, call_func) {
     var c = "BusuanziCallback_" + Math.floor(1099511627776 * Math.random());
-    window[c] = this.evalCall(b);
-    a = a.replace("=BusuanziCallback", "=" + c);
+    window[c] = this.evalCall(call_func);
+    url = url.replace("=BusuanziCallback", "=" + c);
+    console.log(url);
     scriptTag = document.createElement("SCRIPT");
     scriptTag.type = "text/javascript";
     scriptTag.defer = true;
-    scriptTag.src = a;
+    scriptTag.src = url;
     scriptTag.referrerPolicy = "no-referrer-when-downgrade";
+    console.log(scriptTag);
     document.getElementsByTagName("HEAD")[0].appendChild(scriptTag);
   },
-  evalCall: function (a) {
+  evalCall: function (re_call) {
     return function (b) {
       ready(function () {
         try {
-          a(b);
+          console.log(b);
+          re_call(b);
           scriptTag.parentElement.removeChild(scriptTag);
         } catch (c) {
           bszTag.hides();
