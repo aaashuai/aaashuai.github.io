@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="AAAShuai">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://aaashuai.github.io/">
+    <meta property="twitter:image" content="https://aaashuai.github.io/" />
+    
+
+    
+    <meta name="title" content="MacOS 隔离运行 Atrust" />
+    <meta property="og:title" content="MacOS 隔离运行 Atrust" />
+    <meta property="twitter:title" content="MacOS 隔离运行 Atrust" />
+    
+
+    
+    <meta name="description" content="在 macOS 上用 qv2ray &#43; 虚拟机的方式来实现同时连接多个 VPN...">
+    <meta property="og:description" content="在 macOS 上用 qv2ray &#43; 虚拟机的方式来实现同时连接多个 VPN..." />
+    <meta property="twitter:description" content="在 macOS 上用 qv2ray &#43; 虚拟机的方式来实现同时连接多个 VPN..." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="AAAShuai, aaashuai, Blog, 博客, 个人网站">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>MacOS 隔离运行 Atrust | AShuai Blog</title>
+
+    <link rel="canonical" href="/post/05_vpn/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">AAAShuai</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                    
+                    
+		    
+                        <li><a href="/archive/">Archive</a></li>
+                    
+		          
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/network" title="network">
+                            network
+                        </a>
+                        
+                        <a class="tag" href="/tags/vpn" title="vpn">
+                            vpn
+                        </a>
+                        
+                    </div>
+                    <h1>MacOS 隔离运行 Atrust</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Saturday, August 26, 2023
+                            
+                            
+                            
+                            
+                    </span>
+                    <div>
+
+    <script> 
+        function loadAsync(u, c) {
+          var d = document, t = 'script',
+              o = d.createElement(t),
+              s = d.getElementsByTagName(t)[0];
+          o.src = u;
+          if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+          s.parentNode.insertBefore(o, s);
+        }
+
+ 
+        loadAsync("/js/busuanzi.js")
+    </script>
+
+    
+        
+
+        
+        
+            <span id="busuanzi_container_page_pv"><i class="fa fa-eye fa-fw"></i>
+                
+                <span id="busuanzi_value_page_pv"></span>&nbsp;</span>
+        
+    
+
+
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h4 id="背景">背景</h4>
+<p>  最近公司的安全策略又调整了，把其他非 atrust 的代理都关了，
+所有服务都要挂 atrust 才能连，更可气的是还没把关掉的那些 vpn 整合到一个 atrust 里，
+一部分需要挂 A，另一部分需要挂 B，而且日常工作里这两个还都得用到，
+并且 atrust 还不支持多开，就导致一会儿需要切这个，
+一会儿需要切那个，这无形中增加了不少额外的“工作”量。<br>
+  当然，趁这个切换的时间喝喝茶水，舒缓舒缓也是极好的🤣</p>
+<h4 id="纠结">纠结</h4>
+<p>  不过作为一个不喜欢在一个连续工作时间内被各种事情打断的人来说，
+这是极痛苦且低效的。所以想来想去还是得想个办法来解决下这个问题。</p>
+<h4 id="尝试">尝试</h4>
+<p>  我的开发机是 mac，atrust 只能在 mac 和 windows 上安装，
+linux 试了能装但是不能用😂，所以我初步的想法是开个虚拟机装个阉割版的 windows 装 vpn ，
+再通过路由表把需要代理访问的一些ip走虚拟网卡进行转发。
+但是经过亿些尝试，最终以失败告终，流量能代理到虚拟机，但是死活不过 vpn。<br>
+  又是理论实践失败的一天，放弃。</p>
+<blockquote>
+<p>参考过 <a href="https://blog.csdn.net/baofeidyz/article/details/129851257">https://blog.csdn.net/baofeidyz/article/details/129851257</a>, 有兴趣的可以试试.</p>
+</blockquote>
+<h4 id="顿悟">顿悟</h4>
+<p>  后来有一天突然一想，这不就是变相的科学上网么，都是把访问流量转发能连接特定网站的机器上。<br>
+  说干就干，先找个能在 windows 上装的代理服务，这里我选的是 <a href="https://github.com/XTLS/Xray-core">v2ray</a>，
+装好之后经过简单的验证，果然可以！不过接下来又遇到一个问题，就是客户端这里，
+我用的是 <a href="https://github.com/Qv2ray/Qv2ray">qv2ray</a>，有多个 vpn 需要同时连，但是又不能多开，
+如果需要用到哪个了还是通过手动选择的话，那不又回到最初的起点了么。
+于是又进行了亿波查找，功夫不负有心人，qv2ray 有个功能叫<strong>复杂配置</strong>，
+刚好可以解决这个问题。通过域名或 ip 匹配，控制流量走到不同的出口，到此，大功告成。👏</p>
+<blockquote>
+<p>PS：理论上任何 vpn 都能通过这种方式来隔离，保持宿主机的纯净。<br>
+至于我为什么不把两个 atrust 分别装在宿主机和虚拟机中，也是这个原因。</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/04_zsh/" data-toggle="tooltip" data-placement="top" title="Zsh Shell">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+
+<script src="https://utteranc.es/client.js"
+        repo=aaashuai/aaashuai.github.io
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </div>
+
+            
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/network" title="network">
+                            network
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tools" title="tools">
+                            tools
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/vpn" title="vpn">
+                            vpn
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+    
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p class="copyright text-muted">
+                    Copyright &copy; AAAShuai 2023
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
