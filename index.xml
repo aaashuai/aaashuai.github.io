@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AAAShuai</title>
-    <link>https://aaashuai.github.io/</link>
+    <link>https://blog.aaashuai.icu/</link>
     <description>Recent content on AAAShuai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://aaashuai.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aaashuai.icu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacOS 隔离运行 Atrust</title>
-      <link>https://aaashuai.github.io/post/05_vpn/</link>
+      <link>https://blog.aaashuai.icu/post/05_vpn/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://aaashuai.github.io/post/05_vpn/</guid>
+      <guid>https://blog.aaashuai.icu/post/05_vpn/</guid>
       <description>背景 最近公司的安全策略又调整了，把其他非 atrust 的代理都关了， 所有服务都要挂 atrust 才能连，更可气的是还没把关掉的那些 vpn 整合到一个 atrust 里， 一部分需要挂 A，另一部分需要挂 B，而且日常工作里这两个还都得用到， 并且 atrust 还不支持多开，就导致一会儿需要切这个， 一会儿需要切那个，这无形中增加了不少额外的“工作”量。
 当然，趁这个切换的时间喝喝茶水，舒缓舒缓也是极好的🤣
 纠结 不过作为一个不喜欢在一个连续工作时间内被各种事情打断的人来说， 这是极痛苦且低效的。所以想来想去还是得想个办法来解决下这个问题。
@@ -27,10 +27,10 @@ PS：理论上任何 vpn 都能通过这种方式来隔离，保持宿主机的�
     
     <item>
       <title>Zsh Shell</title>
-      <link>https://aaashuai.github.io/post/04_zsh/</link>
+      <link>https://blog.aaashuai.icu/post/04_zsh/</link>
       <pubDate>Fri, 29 Oct 2021 10:57:47 +0800</pubDate>
       
-      <guid>https://aaashuai.github.io/post/04_zsh/</guid>
+      <guid>https://blog.aaashuai.icu/post/04_zsh/</guid>
       <description>1. 给zsh添加自定义补全 在.zshrc添加补全激活
 $ vim ~/.zshrc ... autoload -U compinit compinit ... 查看fpath, 选择一个写脚本的地方
 $ print -rl -- $fpath /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting /Users/xxx/.oh-my-zsh/plugins/zsh-autosuggestions /Users/xxx/.oh-my-zsh/plugins/git /Users/xxx/.oh-my-zsh/plugins/z /Users/xxx/.oh-my-zsh/functions /Users/xxx/.oh-my-zsh/completions /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zsh/plugins/zsh-syntax-highlighting /Users/xxx/.oh-my-zsh/plugins/zsh-autosuggestions /Users/xxx/.oh-my-zsh/plugins/git /Users/xxx/.oh-my-zsh/plugins/z /Users/xxx/.oh-my-zsh/functions /Users/xxx/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions 如果没有想要放置的目录，就把自定义的目录（此处是~/newdir）添加到fpath
@@ -41,20 +41,20 @@ $ print -rl -- $fpath /Users/xxx/.oh-my-zsh/plugins/vi-mode /Users/xxx/.oh-my-zs
     
     <item>
       <title>ideavim 插件速查</title>
-      <link>https://aaashuai.github.io/post/03_ideavim/</link>
+      <link>https://blog.aaashuai.icu/post/03_ideavim/</link>
       <pubDate>Thu, 19 Aug 2021 12:07:04 +0800</pubDate>
       
-      <guid>https://aaashuai.github.io/post/03_ideavim/</guid>
+      <guid>https://blog.aaashuai.icu/post/03_ideavim/</guid>
       <description>NERDTree
 o Open files, directories and bookmarks g:NERDTreeMapActivateNode go Open selected file, but leave cursor in the NERDTree g:NERDTreeMapPreview t Open selected node/bookmark in a new tab g:NERDTreeMapOpenInTab T Same as &amp;rsquo;t&amp;rsquo; but keep the focus on the current tab g:NERDTreeMapOpenInTabSilent i Open selected file in a split window g:NERDTreeMapOpenSplit gi Same as i, but leave the cursor on the NERDTree g:NERDTreeMapPreviewSplit s Open selected file in a new vsplit g:NERDTreeMapOpenVSplit gs Same as s, but leave the cursor on the NERDTree g:NERDTreeMapPreviewVSplit O Recursively open the selected directory g:NERDTreeMapOpenRecursively x Close the current nodes parent g:NERDTreeMapCloseDir X Recursively close all children of the current node g:NERDTreeMapCloseChildren P Jump to the root node g:NERDTreeMapJumpRoot p Jump to current nodes parent g:NERDTreeMapJumpParent K Jump up inside directories at the current tree depth g:NERDTreeMapJumpFirstChild J Jump down inside directories at the current tree depth g:NERDTreeMapJumpLastChild &amp;lt;C-J&amp;gt; Jump down to next sibling of the current directory g:NERDTreeMapJumpNextSibling &amp;lt;C-K&amp;gt; Jump up to previous sibling of the current directory g:NERDTreeMapJumpPrevSibling r Recursively refresh the current directory g:NERDTreeMapRefresh R Recursively refresh the current root g:NERDTreeMapRefreshRoot m Display the NERDTree menu g:NERDTreeMapMenu q Close the NERDTree window g:NERDTreeMapQuit A Zoom (maximize/minimize) the NERDTree window g:NERDTreeMapToggleZoom surround</description>
     </item>
     
     <item>
       <title>Fish Shell</title>
-      <link>https://aaashuai.github.io/post/02_fish/</link>
+      <link>https://blog.aaashuai.icu/post/02_fish/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://aaashuai.github.io/post/02_fish/</guid>
+      <guid>https://blog.aaashuai.icu/post/02_fish/</guid>
       <description>0. 结论 放弃了, fish 另起一套的命令导致在远程服务器上无法直接套用
 1. 为啥用fish 感受一下 friendly interactive shell 有多friendly (其实是zsh用太久了, 想尝鲜, hhh
 2. 安装步骤 安装fish
@@ -67,19 +67,19 @@ curl -L https://get.oh-my.fish | fish b. [wroked]</description>
     
     <item>
       <title>Hello World</title>
-      <link>https://aaashuai.github.io/post/01_helloworld/</link>
+      <link>https://blog.aaashuai.icu/post/01_helloworld/</link>
       <pubDate>Sat, 17 Apr 2021 09:11:54 +0800</pubDate>
       
-      <guid>https://aaashuai.github.io/post/01_helloworld/</guid>
+      <guid>https://blog.aaashuai.icu/post/01_helloworld/</guid>
       <description>print(&amp;#34;hello world...&amp;#34;) </description>
     </item>
     
     <item>
       <title>Posts Archive</title>
-      <link>https://aaashuai.github.io/archive/</link>
+      <link>https://blog.aaashuai.icu/archive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://aaashuai.github.io/archive/</guid>
+      <guid>https://blog.aaashuai.icu/archive/</guid>
       <description></description>
     </item>
     

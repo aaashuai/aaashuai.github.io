@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on AAAShuai</title>
-    <link>https://aaashuai.github.io/categories/</link>
+    <link>https://blog.aaashuai.icu/categories/</link>
     <description>Recent content in Categories on AAAShuai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language><atom:link href="https://aaashuai.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language><atom:link href="https://blog.aaashuai.icu/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

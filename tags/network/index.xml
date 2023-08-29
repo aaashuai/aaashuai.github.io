@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>network on AAAShuai</title>
-    <link>https://aaashuai.github.io/tags/network/</link>
+    <link>https://blog.aaashuai.icu/tags/network/</link>
     <description>Recent content in network on AAAShuai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://aaashuai.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.aaashuai.icu/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MacOS 隔离运行 Atrust</title>
-      <link>https://aaashuai.github.io/post/05_vpn/</link>
+      <link>https://blog.aaashuai.icu/post/05_vpn/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://aaashuai.github.io/post/05_vpn/</guid>
+      <guid>https://blog.aaashuai.icu/post/05_vpn/</guid>
       <description>背景 最近公司的安全策略又调整了，把其他非 atrust 的代理都关了， 所有服务都要挂 atrust 才能连，更可气的是还没把关掉的那些 vpn 整合到一个 atrust 里， 一部分需要挂 A，另一部分需要挂 B，而且日常工作里这两个还都得用到， 并且 atrust 还不支持多开，就导致一会儿需要切这个， 一会儿需要切那个，这无形中增加了不少额外的“工作”量。
 当然，趁这个切换的时间喝喝茶水，舒缓舒缓也是极好的🤣
 纠结 不过作为一个不喜欢在一个连续工作时间内被各种事情打断的人来说， 这是极痛苦且低效的。所以想来想去还是得想个办法来解决下这个问题。
