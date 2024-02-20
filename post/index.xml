@@ -41,7 +41,7 @@
       <link>https://blog.aaashuai.com/post/01_helloworld/</link>
       <pubDate>Sat, 17 Apr 2021 09:11:54 +0800</pubDate>
       <guid>https://blog.aaashuai.com/post/01_helloworld/</guid>
-      <description>print(&amp;#34;hello world...&amp;#34;) </description>
+      <description> print(&amp;#34;hello world...&amp;#34;) </description>
     </item>
   </channel>
 </rss>
