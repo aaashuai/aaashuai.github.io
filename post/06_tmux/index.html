@@ -203,11 +203,17 @@
 
                 
                 <h4 id="背景">背景</h4>
-<p>  平时喜欢在终端里使用 tmux 来跑一些命令（因为习惯性的关闭终端，所以有一些命令跑完想回过头来看看结果，就无从下手了），但是每次打开终端后都要手动执行下 <code>tat tmp (alias tat = &quot;tmux attach -t&quot;)</code> 很麻烦，所以找了找有没有办法能够在启动终端的时候默认执行，有则 <code>tmux attach</code>，无则 <code>tmux new -s tmp</code>，减少重复性操作。</p>
-<h4 id="结论">结论</h4>
-<p>  在 <code>~/.config/kitty/kitty.conf</code> 中加一行，可以修改默认 shell 执行命令：</p>
+<p>  平时喜欢在终端（zsh）里使用 tmux 来跑一些命令（因为习惯性的关闭终端，所以有一些命令跑完想回过头来看看结果，就无从下手了），但是每次打开终端后都要手动执行下 <code>tat tmp (alias tat = &quot;tmux attach -t&quot;)</code> 很麻烦，所以找了找有没有办法能够在启动终端的时候默认执行，有则 <code>tmux attach</code>，无则 <code>tmux new -s tmp</code>，减少重复性操作。</p>
+<h4 id="探索">探索</h4>
+<p>  在 <code>~/.config/kitty/kitty.conf</code> 配置中，可以通过修改默认 shell 执行命令，来改变终端进入时执行的默认指令：</p>
+<p>如果你有几个 tmux session 并且想在打开终端时选择要进入的 session 那就可以结合 fzf 来实现：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>shell /bin/zsh -l -c <span style="color:#e6db74">&#34;tmux ls -F &#39;#{session_name}&#39; | fzf  --reverse --height </span><span style="color:#e6db74">${</span>FZF_TMUX_HEIGHT<span style="color:#66d9ef">:-</span>40%<span style="color:#e6db74">}</span><span style="color:#e6db74"> --bind=enter:replace-query+print-query | read session &amp;&amp; tmux attach -t </span><span style="color:#e6db74">${</span>session<span style="color:#66d9ef">:-</span>tmp<span style="color:#e6db74">}</span><span style="color:#e6db74"> || tmux new -s </span><span style="color:#e6db74">${</span>session<span style="color:#66d9ef">:-</span>tmp<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>  但是经过一段时间的使用，发现还是直接进入tmp的情况比较多，所以就简化为：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>shell /bin/zsh -l -c <span style="color:#e6db74">&#34;tmux attach -t </span><span style="color:#e6db74">${</span>session<span style="color:#66d9ef">:-</span>tmp<span style="color:#e6db74">}</span><span style="color:#e6db74"> || tmux new -s </span><span style="color:#e6db74">${</span>session<span style="color:#66d9ef">:-</span>tmp<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><p>  大功告成！！</p>
+</span></span></code></pre></div><p>   大功告成！！</p>
+<blockquote>
+<p>果然，懒惰是进步的阶梯，hhhhhh</p>
+</blockquote>
 
 
                 

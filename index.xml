@@ -13,7 +13,7 @@
       <link>https://blog.aaashuai.com/post/06_tmux/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       <guid>https://blog.aaashuai.com/post/06_tmux/</guid>
-      <description>背景 平时喜欢在终端里使用 tmux 来跑一些命令（因为习惯性的关闭终端，所以有一些命令跑完想回过头来看看结果，就无从下手了），但是每次打开终端后都要手动执行下 tat tmp (alias tat = &amp;quot;tmux attach -t&amp;quot;) 很麻烦，所以找了找有没有办法能够在启动终端的时候默认执行，有则 tmux attach，无则 tmux new -s tmp，减少重复性操作。&#xA;结论 在 ~/.config/kitty/kitty.conf 中加一行，可以修改默认 shell 执行命令：&#xA;shell /bin/zsh -l -c &amp;#34;tmux attach -t ${session:-tmp} || tmux new -s ${session:-tmp}&amp;#34; 大功告成！！</description>
+      <description>背景 平时喜欢在终端（zsh）里使用 tmux 来跑一些命令（因为习惯性的关闭终端，所以有一些命令跑完想回过头来看看结果，就无从下手了），但是每次打开终端后都要手动执行下 tat tmp (alias tat = &amp;quot;tmux attach -t&amp;quot;) 很麻烦，所以找了找有没有办法能够在启动终端的时候默认执行，有则 tmux attach，无则 tmux new -s tmp，减少重复性操作。&#xA;探索 在 ~/.config/kitty/kitty.conf 配置中，可以通过修改默认 shell 执行命令，来改变终端进入时执行的默认指令：&#xA;如果你有几个 tmux session 并且想在打开终端时选择要进入的 session 那就可以结合 fzf 来实现：&#xA;shell /bin/zsh -l -c &amp;#34;tmux ls -F &amp;#39;#{session_name}&amp;#39; | fzf --reverse --height ${FZF_TMUX_HEIGHT:-40%} --bind=enter:replace-query+print-query | read session &amp;amp;&amp;amp; tmux attach -t ${session:-tmp} || tmux new -s ${session:-tmp}&amp;#34; 但是经过一段时间的使用，发现还是直接进入tmp的情况比较多，所以就简化为：&#xA;shell /bin/zsh -l -c &amp;#34;tmux attach -t ${session:-tmp} || tmux new -s ${session:-tmp}&amp;#34; 大功告成！！</description>
     </item>
     <item>
       <title>MacOS 隔离运行 Atrust</title>
