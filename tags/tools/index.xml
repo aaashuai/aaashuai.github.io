@@ -6,8 +6,15 @@
     <description>Recent content in tools on AAAShuai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 29 Oct 2021 10:57:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.aaashuai.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tmux 和 Kitty</title>
+      <link>https://blog.aaashuai.com/post/06_tmux/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://blog.aaashuai.com/post/06_tmux/</guid>
+      <description>背景 平时喜欢在终端里使用 tmux 来跑一些命令（因为习惯性的关闭终端，所以有一些命令跑完想回过头来看看结果，就无从下手了），但是每次打开终端后都要手动执行下 tat tmp (alias tat = &amp;quot;tmux attach -t&amp;quot;) 很麻烦，所以找了找有没有办法能够在启动终端的时候默认执行，有则 tmux attach，无则 tmux new -s tmp，减少重复性操作。&#xA;结论 在 ~/.config/kitty/kitty.conf 中加一行，可以修改默认 shell 执行命令：&#xA;shell /bin/zsh -l -c &amp;#34;tmux attach -t ${session:-tmp} || tmux new -s ${session:-tmp}&amp;#34; 大功告成！！</description>
+    </item>
     <item>
       <title>Zsh Shell</title>
       <link>https://blog.aaashuai.com/post/04_zsh/</link>
