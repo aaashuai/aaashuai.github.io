@@ -17,15 +17,15 @@
     
 
     
-    <meta name="title" content="MacOS 隔离运行 Atrust" />
-    <meta property="og:title" content="MacOS 隔离运行 Atrust" />
-    <meta property="twitter:title" content="MacOS 隔离运行 Atrust" />
+    <meta name="title" content="Learning New Things Makes Me Feel Better!" />
+    <meta property="og:title" content="Learning New Things Makes Me Feel Better!" />
+    <meta property="twitter:title" content="Learning New Things Makes Me Feel Better!" />
     
 
     
-    <meta name="description" content="在 macOS 上用 qv2ray &#43; 虚拟机的方式来实现同时连接多个 VPN...">
-    <meta property="og:description" content="在 macOS 上用 qv2ray &#43; 虚拟机的方式来实现同时连接多个 VPN..." />
-    <meta property="twitter:description" content="在 macOS 上用 qv2ray &#43; 虚拟机的方式来实现同时连接多个 VPN..." />
+    <meta name="description" content="A Programmer">
+    <meta property="og:description" content="A Programmer" />
+    <meta property="twitter:description" content="A Programmer" />
     
 
     
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="AAAShuai, aaashuai, Blog, 博客, 个人网站, python, tools">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>MacOS 隔离运行 Atrust | AShuai Blog</title>
+    <title>Learning New Things Makes Me Feel Better! | AShuai Blog</title>
 
-    <link rel="canonical" href="/post/05_vpn/">
+    <link rel="canonical" href="/post/07_insight/">
 
     
     
@@ -162,20 +162,16 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/network" title="network">
-                            network
-                        </a>
-                        
-                        <a class="tag" href="/tags/vpn" title="vpn">
-                            vpn
+                        <a class="tag" href="/tags/say-something" title="say something">
+                            say something
                         </a>
                         
                     </div>
-                    <h1>MacOS 隔离运行 Atrust</h1>
+                    <h1>Learning New Things Makes Me Feel Better!</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
-                            Saturday, August 26, 2023
+                            Friday, December 13, 2024
                             
                             
                             
@@ -202,38 +198,7 @@
                 post-container">
 
                 
-                <h4 id="背景">背景</h4>
-<p>  最近公司的安全策略又调整了，把其他非 atrust 的代理都关了，
-所有服务都要挂 atrust 才能连，更可气的是还没把关掉的那些 vpn 整合到一个 atrust 里，
-一部分需要挂 A，另一部分需要挂 B，而且日常工作里这两个还都得用到，
-并且 atrust 还不支持多开，就导致一会儿需要切这个，
-一会儿需要切那个，这无形中增加了不少额外的“工作”量。<br>
-  当然，趁这个切换的时间喝喝茶水，舒缓舒缓也是极好的🤣</p>
-<h4 id="纠结">纠结</h4>
-<p>  不过作为一个不喜欢在一个连续工作时间内被各种事情打断的人来说，
-这是极痛苦且低效的。所以想来想去还是得想个办法来解决下这个问题。</p>
-<h4 id="尝试">尝试</h4>
-<p>  我的开发机是 mac，atrust 只能在 mac 和 windows 上安装，
-linux 试了能装但是不能用😂，所以我初步的想法是开个虚拟机装个阉割版的 windows 装 vpn ，
-再通过路由表把需要代理访问的一些ip走虚拟网卡进行转发。
-但是经过亿些尝试，最终以失败告终，流量能代理到虚拟机，但是死活不过 vpn。<br>
-  又是理论实践失败的一天，放弃。</p>
-<blockquote>
-<p>参考过 <a href="https://blog.csdn.net/baofeidyz/article/details/129851257">https://blog.csdn.net/baofeidyz/article/details/129851257</a>, 有兴趣的可以试试.</p>
-</blockquote>
-<h4 id="顿悟">顿悟</h4>
-<p>  后来有一天突然一想，这不就是变相的科学上网么，都是把访问流量转发能连接特定网站的机器上。<br>
-  说干就干，先找个能在 windows 上装的代理服务，这里我选的是 <a href="https://github.com/XTLS/Xray-core">v2ray</a>，
-装好之后经过简单的验证，果然可以！不过接下来又遇到一个问题，就是客户端这里，
-我用的是 <a href="https://github.com/Qv2ray/Qv2ray">qv2ray</a>，有多个 vpn 需要同时连，但是又不能多开，
-如果需要用到哪个了还是通过手动选择的话，那不又回到最初的起点了么。
-于是又进行了亿波查找，功夫不负有心人，qv2ray 有个功能叫<strong>复杂配置</strong>，
-刚好可以解决这个问题。通过域名或 ip 匹配，控制流量走到不同的出口，到此，大功告成。👏</p>
-<blockquote>
-<p>PS：理论上任何 vpn 都能通过这种方式来隔离，保持宿主机的纯净。<br>
-至于我为什么不把两个 atrust 分别装在宿主机和虚拟机中，也是这个原因。</p>
-</blockquote>
-
+                
 
                 
 
@@ -242,15 +207,10 @@ linux 试了能装但是不能用😂，所以我初步的想法是开个虚拟�
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/04_zsh/" data-toggle="tooltip" data-placement="top" title="Zsh Shell">&larr;
+                        <a href="/post/06_tmux/" data-toggle="tooltip" data-placement="top" title="Tmux 和 Kitty">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/06_tmux/" data-toggle="tooltip" data-placement="top" title="Tmux 和 Kitty">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
                 
