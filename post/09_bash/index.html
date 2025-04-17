@@ -17,15 +17,15 @@
     
 
     
-    <meta name="title" content="Fish Shell" />
-    <meta property="og:title" content="Fish Shell" />
-    <meta property="twitter:title" content="Fish Shell" />
+    <meta name="title" content="Bash 命令小记" />
+    <meta property="og:title" content="Bash 命令小记" />
+    <meta property="twitter:title" content="Bash 命令小记" />
     
 
     
-    <meta name="description" content="a friendly interactive shell">
-    <meta property="og:description" content="a friendly interactive shell" />
-    <meta property="twitter:description" content="a friendly interactive shell" />
+    <meta name="description" content="记录一些日常使用频次不多，但是很长长长长的 bash 命令">
+    <meta property="og:description" content="记录一些日常使用频次不多，但是很长长长长的 bash 命令" />
+    <meta property="twitter:description" content="记录一些日常使用频次不多，但是很长长长长的 bash 命令" />
     
 
     
@@ -36,9 +36,9 @@
     <meta name="keyword"  content="AAAShuai, aaashuai, Blog, 博客, 个人网站, python, tools">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Fish Shell | AShuai Blog</title>
+    <title>Bash 命令小记 | AShuai Blog</title>
 
-    <link rel="canonical" href="/post/02_fish/">
+    <link rel="canonical" href="/post/09_bash/">
 
     
     
@@ -162,16 +162,32 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/tools" title="tools">
-                            tools
+                        <a class="tag" href="/tags/bash" title="bash">
+                            bash
+                        </a>
+                        
+                        <a class="tag" href="/tags/git" title="git">
+                            git
+                        </a>
+                        
+                        <a class="tag" href="/tags/sed" title="sed">
+                            sed
+                        </a>
+                        
+                        <a class="tag" href="/tags/grep" title="grep">
+                            grep
+                        </a>
+                        
+                        <a class="tag" href="/tags/xargs" title="xargs">
+                            xargs
                         </a>
                         
                     </div>
-                    <h1>Fish Shell</h1>
+                    <h1>Bash 命令小记</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
-                            Sunday, June 20, 2021
+                            Thursday, April 17, 2025
                             
                             
                             
@@ -198,81 +214,43 @@
                 post-container">
 
                 
-                <h4 id="0-结论">0. 结论</h4>
-<p>放弃了, fish 另起一套的命令导致在远程服务器上无法直接套用</p>
-<h4 id="1-为啥用fish"><del>1. 为啥用fish</del></h4>
-<p><del>感受一下 friendly interactive shell 有多friendly (其实是zsh用太久了, 想尝鲜, hhh</del></p>
-<h4 id="2-安装步骤"><del>2. 安装步骤</del></h4>
-<ol>
-<li>
-<p>安装fish</p>
-<pre tabindex="0"><code>brew install fish
-</code></pre></li>
-<li>
-<p>修改为默认shell （参见官方文档</p>
-<ol>
-<li>Add the shell to <code>/etc/shells</code> with:</li>
-</ol>
-<pre tabindex="0"><code>echo /usr/local/bin/fish | sudo tee -a /etc/shells
-</code></pre><ol start="2">
-<li>Change your default shell with:</li>
-</ol>
-<pre tabindex="0"><code>chsh -s /usr/local/bin/fish
-</code></pre><ol start="3">
-<li>重新打开shell</li>
-</ol>
-</li>
-<li>
-<p>安装fisher</p>
-<pre tabindex="0"><code>curl -sL https://git.io/fisher | source &amp;&amp; fisher install jorgebucaran/fisher
-</code></pre></li>
-<li>
-<p>安装z-jump</p>
-<pre tabindex="0"><code>fisher install jethrokuan/z
-</code></pre></li>
-<li>
-<p>安装 oh-my-fish
-a. [墙&hellip; ]</p>
-<pre tabindex="0"><code>curl -L https://get.oh-my.fish | fish
-</code></pre><p>b. [wroked]</p>
-<pre tabindex="0"><code>git clone https://github.com/oh-my-fish/oh-my-fish
-cd oh-my-fish
-bin/install --offline
-</code></pre></li>
-<li>
-<p>安装皮肤 ays</p>
-<pre tabindex="0"><code>omf install ays
-</code></pre></li>
-</ol>
-<h4 id="3-进行一些常用的调整"><del>3. 进行一些常用的调整</del></h4>
-<ol>
-<li>
-<p>添加自定义配置文件</p>
-<pre tabindex="0"><code>touch ~/.config/fish/config.fish
-</code></pre></li>
-<li>
-<p>更换命令补全快捷键为 ctrl - j</p>
-<pre tabindex="0"><code># ~/.config/fish/config.fish
-bind \cj accept-autosuggestion
-</code></pre></li>
-<li>
-<p>添加刷新fish配置命令，通过sfish (source fish) 来刷新新增配置</p>
-<pre tabindex="0"><code># ~/.config/fish/functions/sfish.fish
-function sfish
-source /Users/nsity/.config/fish/config.fish
-end
-</code></pre></li>
-<li>
-<p>集成fd，bat</p>
-<p>todo</p>
-</li>
-</ol>
-<h4 id="4-体验"><del>4. 体验</del></h4>
-<ol>
-<li>补全提示很美</li>
-<li>速度好像的确比zsh快一些（不知道是不是错觉</li>
-</ol>
-
+                <p>从<code>zsh history</code>里摘出来一些不常使用，但是也不太好记的命令们。以免哪天太久没用了，要重新调试或者问 LLM 😂。</p>
+<h1 id="1-git">1. Git</h1>
+<h2 id="清理已合并分支">清理已合并分支</h2>
+<blockquote>
+<p>使用 <code>egrep -v</code> 保留固定分支</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 检查是否是想清理的分支</span>
+</span></span><span style="display:flex;"><span>git branch --merged |egrep -v <span style="color:#e6db74">&#39;dev1|test1|master|(v[a-z]+)&#39;</span>|less
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 确认无误后执行</span>
+</span></span><span style="display:flex;"><span>git branch --merged |egrep -v <span style="color:#e6db74">&#39;dev1|test1|master|(v[a-z]+)&#39;</span>|xargs echo git branch -d
+</span></span></code></pre></div><h2 id="清理远程已合并分支">清理远程已合并分支</h2>
+<blockquote>
+<p>使用 <code>egrep -v</code> 保留固定分支</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 检查是否是想清理的分支</span>
+</span></span><span style="display:flex;"><span>git branch -r --merged|egrep -v <span style="color:#e6db74">&#39;dev1|test1|master|(v[a-z]+)&#39;</span>|less 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 确认无误后执行</span>
+</span></span><span style="display:flex;"><span>git branch -r --merged|egrep -v <span style="color:#e6db74">&#39;dev1|test1|master|(v[a-z]+)&#39;</span>|sed <span style="color:#e6db74">&#39;s/origin\//:/g&#39;</span>|xargs -I <span style="color:#f92672">{}</span> git push origin <span style="color:#f92672">{}</span>
+</span></span></code></pre></div><h2 id="cherry-pick-多提交">cherry-pick 多提交</h2>
+<blockquote>
+<p>若不想包含 <code>oldestCommit</code> 对应的提交, 则去掉 <code>$oldestCommit^</code> 中的 <code>^</code> 符号，使用 <code>$oldestCommit..$latestCommit</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>author<span style="color:#f92672">=</span>xxx
+</span></span><span style="display:flex;"><span>branch<span style="color:#f92672">=</span>xxx
+</span></span><span style="display:flex;"><span>oldestCommit<span style="color:#f92672">=</span>xxx
+</span></span><span style="display:flex;"><span>latestCommit<span style="color:#f92672">=</span>xxx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 检查是否是想要合并的提交</span>
+</span></span><span style="display:flex;"><span>git rev-list --author $author --branches<span style="color:#f92672">=</span>$branch $oldestCommit^..$latestCommit --oneline
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 确认无误后执行</span>
+</span></span><span style="display:flex;"><span>git cherry-pick <span style="color:#66d9ef">$(</span>git rev-list --author $author --branches<span style="color:#f92672">=</span>$branch $oldestCommit^..$latestCommit|tac<span style="color:#66d9ef">)</span>
+</span></span></code></pre></div><h1 id="2-sed">2. Sed</h1>
+<h2 id="查找并替换目标文件">查找并替换目标文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 查找到包含 .Site.DisqusShortname 的文件，并将其替换为 .Site.Config.Services.Disqus.Shortname</span>
+</span></span><span style="display:flex;"><span>find . -type f|xargs grep -l .Site.DisqusShortname |xargs sed -i <span style="color:#e6db74">&#39;&#39;</span> <span style="color:#e6db74">&#39;s/.Site.DisqusShortname/.Site.Config.Services.Disqus.Shortname/g&#39;</span>
+</span></span></code></pre></div>
 
                 
 
@@ -281,15 +259,10 @@ end
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/01_helloworld/" data-toggle="tooltip" data-placement="top" title="Hello World">&larr;
+                        <a href="/post/08_note/" data-toggle="tooltip" data-placement="top" title="果然人都是会变的">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/03_ideavim/" data-toggle="tooltip" data-placement="top" title="ideavim 插件速查">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
                 

@@ -9,10 +9,45 @@
     <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://blog.sforest.top/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bash</title>
+      <link>https://blog.sforest.top/tags/bash/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.sforest.top/tags/bash/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://blog.sforest.top/tags/git/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.sforest.top/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grep</title>
+      <link>https://blog.sforest.top/tags/grep/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.sforest.top/tags/grep/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Say Something</title>
       <link>https://blog.sforest.top/tags/say-something/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
       <guid>https://blog.sforest.top/tags/say-something/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sed</title>
+      <link>https://blog.sforest.top/tags/sed/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.sforest.top/tags/sed/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xargs</title>
+      <link>https://blog.sforest.top/tags/xargs/</link>
+      <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.sforest.top/tags/xargs/</guid>
       <description></description>
     </item>
     <item>
