@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal on AAAShuai</title>
-    <link>https://blog.sforest.top/tags/terminal/</link>
+    <link>https://aaashuai.github.io/tags/terminal/</link>
     <description>Recent content in Terminal on AAAShuai</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.sforest.top/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://aaashuai.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux 和 Kitty</title>
-      <link>https://blog.sforest.top/post/06_tmux/</link>
+      <link>https://aaashuai.github.io/post/06_tmux/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/post/06_tmux/</guid>
+      <guid>https://aaashuai.github.io/post/06_tmux/</guid>
       <description>&lt;h4 id=&#34;背景&#34;&gt;背景&lt;/h4&gt;&#xA;&lt;p&gt;  平时喜欢在终端（zsh）里使用 tmux 来跑一些命令（因为习惯性的关闭终端，所以有一些命令跑完想回过头来看看结果，就无从下手了），但是每次打开终端后都要手动执行下 &lt;code&gt;tat tmp (alias tat = &amp;quot;tmux attach -t&amp;quot;)&lt;/code&gt; 很麻烦，所以找了找有没有办法能够在启动终端的时候默认执行，有则 &lt;code&gt;tmux attach&lt;/code&gt;，无则 &lt;code&gt;tmux new -s tmp&lt;/code&gt;，减少重复性操作。&lt;/p&gt;&#xA;&lt;h4 id=&#34;探索&#34;&gt;探索&lt;/h4&gt;&#xA;&lt;p&gt;  在 &lt;code&gt;~/.config/kitty/kitty.conf&lt;/code&gt; 配置中，可以通过修改默认 shell 执行命令，来改变终端进入时执行的默认指令：&lt;/p&gt;&#xA;&lt;p&gt;如果你有几个 tmux session 并且想在打开终端时选择要进入的 session 那就可以结合 fzf 来实现：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shell /bin/zsh -l -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;tmux ls -F &amp;#39;#{session_name}&amp;#39; | fzf  --reverse --height &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;FZF_TMUX_HEIGHT&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;40%&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; --bind=enter:replace-query+print-query | read session &amp;amp;&amp;amp; tmux attach -t &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;session&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;tmp&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; || tmux new -s &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;session&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;tmp&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;  但是经过一段时间的使用，发现还是直接进入tmp的情况比较多，所以就简化为：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;shell /bin/zsh -l -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;tmux attach -t &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;session&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;tmp&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; || tmux new -s &lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;session&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;tmp&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;   大功告成！！&lt;/p&gt;</description>
     </item>
   </channel>

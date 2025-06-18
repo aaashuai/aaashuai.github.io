@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AAAShuai</title>
-    <link>https://blog.sforest.top/tags/</link>
+    <link>https://aaashuai.github.io/tags/</link>
     <description>Recent content in Tags on AAAShuai</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 17 Apr 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://blog.sforest.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://aaashuai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash</title>
-      <link>https://blog.sforest.top/tags/bash/</link>
+      <link>https://aaashuai.github.io/tags/bash/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/bash/</guid>
+      <guid>https://aaashuai.github.io/tags/bash/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://blog.sforest.top/tags/git/</link>
+      <link>https://aaashuai.github.io/tags/git/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/git/</guid>
+      <guid>https://aaashuai.github.io/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Grep</title>
-      <link>https://blog.sforest.top/tags/grep/</link>
+      <link>https://aaashuai.github.io/tags/grep/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/grep/</guid>
+      <guid>https://aaashuai.github.io/tags/grep/</guid>
       <description></description>
     </item>
     <item>
       <title>Say Something</title>
-      <link>https://blog.sforest.top/tags/say-something/</link>
+      <link>https://aaashuai.github.io/tags/say-something/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/say-something/</guid>
+      <guid>https://aaashuai.github.io/tags/say-something/</guid>
       <description></description>
     </item>
     <item>
       <title>Sed</title>
-      <link>https://blog.sforest.top/tags/sed/</link>
+      <link>https://aaashuai.github.io/tags/sed/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/sed/</guid>
+      <guid>https://aaashuai.github.io/tags/sed/</guid>
       <description></description>
     </item>
     <item>
       <title>Xargs</title>
-      <link>https://blog.sforest.top/tags/xargs/</link>
+      <link>https://aaashuai.github.io/tags/xargs/</link>
       <pubDate>Thu, 17 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/xargs/</guid>
+      <guid>https://aaashuai.github.io/tags/xargs/</guid>
       <description></description>
     </item>
     <item>
       <title>Terminal</title>
-      <link>https://blog.sforest.top/tags/terminal/</link>
+      <link>https://aaashuai.github.io/tags/terminal/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/terminal/</guid>
+      <guid>https://aaashuai.github.io/tags/terminal/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools</title>
-      <link>https://blog.sforest.top/tags/tools/</link>
+      <link>https://aaashuai.github.io/tags/tools/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/tools/</guid>
+      <guid>https://aaashuai.github.io/tags/tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>https://blog.sforest.top/tags/network/</link>
+      <link>https://aaashuai.github.io/tags/network/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/network/</guid>
+      <guid>https://aaashuai.github.io/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Vpn</title>
-      <link>https://blog.sforest.top/tags/vpn/</link>
+      <link>https://aaashuai.github.io/tags/vpn/</link>
       <pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://blog.sforest.top/tags/vpn/</guid>
+      <guid>https://aaashuai.github.io/tags/vpn/</guid>
       <description></description>
     </item>
   </channel>
